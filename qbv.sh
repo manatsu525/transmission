@@ -1,0 +1,29 @@
+#!/bin/bash
+
+service(){
+cat > qb.service <<-EOF
+[Unit]
+Description=qb(/etc/systemd/system/qb.service)
+After=network.target
+Wants=network-online.target
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/qbittorrent-nox --webui-port=8088
+Restart=on-failure
+RestartSec=10s
+[Install]
+WantedBy=multi-user.target
+EOF
+}
+
+apt update -y
+apt install qbittorrent-nox -y
+service
+mv qb.service /etc/systemd/system/
+systemctl daemon-reload
+systemctl enable qb.service
+systemctl start qb
+
+sed -i '8,10c \    browse\n    root /var/lib/transmission-daemon/downloads' /usr/local/etc/caddy/Caddyfile
+systemctl restart caddy

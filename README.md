@@ -7,4 +7,8 @@ v2ray：
 bash <(curl -L -s https://raw.githubusercontent.com/manatsu525/transmission/main/installv.sh) | tee transmission.log
 
 qbv:
-trojan： bash <(curl -L -s https://raw.githubusercontent.com/manatsu525/transmission/main/qbv.sh) | tee qbv.log
+bash <(curl -L -s https://raw.githubusercontent.com/manatsu525/transmission/main/qbv.sh) | tee qbv.log
+
+qbt:
+bash <(curl -L -s https://raw.githubusercontent.com/manatsu525/transmission/main/qbt.sh) | tee qbt.log
+

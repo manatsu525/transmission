@@ -25,5 +25,6 @@ systemctl daemon-reload
 systemctl enable qb.service
 systemctl start qb
 
-sed -i '8,10c \    browse\n    root /root/Downloads' /usr/local/etc/caddy/Caddyfile
+mkdir /usr/downloads
+sed -i '8,10c \    browse\n    root /usr/downloads' /usr/local/etc/caddy/Caddyfile
 systemctl restart caddy

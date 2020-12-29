@@ -9,7 +9,7 @@ Wants=network-online.target
 [Service]
 Type=simple
 User=root
-ExecStart=/usr/bin/qbittorrent-nox --webui-port=8088
+ExecStart=/usr/bin/qbittorrent-nox --webui-port=9094
 Restart=on-failure
 RestartSec=10s
 [Install]

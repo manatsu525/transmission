@@ -26,5 +26,5 @@ systemctl enable qb.service
 systemctl start qb
 
 mkdir /usr/downloads
-sed -i '8,10c \    browse\n    root /usr/downloads' /usr/local/etc/caddy/Caddyfile
+sed -i '/proxy \/ http/{N;s/\n/ /;N;s/\n/ /};/proxy \/ http/c \    browse\n    root /usr/downloads' /usr/local/etc/caddy/Caddyfile
 systemctl restart caddy

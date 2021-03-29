@@ -14,4 +14,5 @@ systemctl start transmission-daemon
 #/usr/local/etc/caddy/Caddyfile
 
 sed -i '/proxy \/ http/{N;s/\n/ /;N;s/\n/ /};/proxy \/ http/c \    browse\n    root /usr/downloads' /etc/caddy/Caddyfile
+ln -s /var/lib/transmission-daemon/downloads /usr/downloads
 systemctl restart caddy

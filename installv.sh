@@ -8,6 +8,7 @@ sed -i 's/\("rpc-username": \)".*"/\1"sumire"/g' /etc/transmission-daemon/settin
 sed -i 's/\("rpc-whitelist-enabled": \).*/\1false,/g' /etc/transmission-daemon/settings.json
 sed -i 's/\("rpc-authentication-required": \).*/\1true,/g' /etc/transmission-daemon/settings.json
 sed -i 's/\("ratio-limit": \).*/\11,/g' /etc/transmission-daemon/settings.json
+sed -i 's/\("rpc-port": \).*/\12095,/g' /etc/transmission-daemon/settings.json
 sed -i 's/\("ratio-limit-enabled": \).*/\1true,/g' /etc/transmission-daemon/settings.json
 systemctl start transmission-daemon
 
